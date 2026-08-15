@@ -1,7 +1,7 @@
 import json
 from json import JSONDecodeError
 
-from Category import Category
+from src.Category import Category
 
 
 def load_data_from_json(json_path: str = "./data/products.json") -> list[Category]:
@@ -17,14 +17,7 @@ def load_data_from_json(json_path: str = "./data/products.json") -> list[Categor
         return []
 
     try:
-        return [
-            Category(
-                category["name"],
-                category["description"],
-                category["products"]
-            )
-            for category in data
-        ]
+        return [Category(category["name"], category["description"], category["products"]) for category in data]
     except KeyError as e:
         print(f"В JSON отсутствует обязательное поле: {e}")
         return []

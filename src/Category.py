@@ -1,8 +1,9 @@
-from Product import Product
+from src.Product import Product
 
 
 class Category:
     """Моделька категорий"""
+
     # Атрибуты
     category_count = 0
     product_count = 0

@@ -1,7 +1,7 @@
 import json
 
-from Category import Category
-from utils import load_data_from_json
+from src.Category import Category
+from src.utils import load_data_from_json
 
 
 def test_load_data_from_json_file_not_found():
@@ -15,14 +15,7 @@ def test_load_data_from_json(tmp_path, monkeypatch):
         {
             "name": "Смартфоны",
             "description": "Смартфоны для жизни",
-            "products": [
-                {
-                    "name": "Iphone 15",
-                    "description": "512GB, Gray space",
-                    "price": 210000.0,
-                    "quantity": 8
-                }
-            ]
+            "products": [{"name": "Iphone 15", "description": "512GB, Gray space", "price": 210000.0, "quantity": 8}],
         }
     ]
 
@@ -30,10 +23,7 @@ def test_load_data_from_json(tmp_path, monkeypatch):
     data_dir.mkdir()
 
     json_file = data_dir / "products.json"
-    json_file.write_text(
-        json.dumps(data, ensure_ascii=False),
-        encoding="utf-8"
-    )
+    json_file.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
 
     monkeypatch.chdir(tmp_path)
 
@@ -48,25 +38,14 @@ def test_load_data_from_json(tmp_path, monkeypatch):
 
 def test_load_data_from_json_multiple_categories(tmp_path, monkeypatch):
     data = [
-        {
-            "name": "Смартфоны",
-            "description": "Телефоны",
-            "products": []
-        },
-        {
-            "name": "Телевизоры",
-            "description": "Телевизоры",
-            "products": []
-        }
+        {"name": "Смартфоны", "description": "Телефоны", "products": []},
+        {"name": "Телевизоры", "description": "Телевизоры", "products": []},
     ]
 
     data_dir = tmp_path / "data"
     data_dir.mkdir()
 
-    (data_dir / "products.json").write_text(
-        json.dumps(data, ensure_ascii=False),
-        encoding="utf-8"
-    )
+    (data_dir / "products.json").write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
 
     monkeypatch.chdir(tmp_path)
 

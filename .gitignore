@@ -9,8 +9,8 @@
 
 #pytest-coverage
 .coverage
-htmlcov/
-!index.html
+htmlcov/*
+!htmlcov/index.html
 
 # Байт-код Python (сгенерированные файлы компиляции)
 __pycache__/
