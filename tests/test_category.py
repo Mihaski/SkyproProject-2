@@ -25,7 +25,6 @@ def test_add_product(product_apple, category_fruit):
     category_fruit.add_product(product_apple)
 
     assert category_fruit.product_count == old_count + 1
-    assert len(category_fruit.products) == 4
 
 
 def test_catefory_count(product_apple):

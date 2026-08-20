@@ -16,15 +16,15 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(self.__products)
 
-    def add_product(self, product: Product) -> None:
+    def add_product(self, product: Product):
         """Добавляет товар в категорию."""
         self.__products.append(product)
         Category.product_count += 1
 
     @property
-    def products(self) -> list[str]:
+    def products(self) -> str:
         """геттер для списка продуктов"""
         result = []
         for product in self.__products:
-            result.append(f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.")
-        return result
+            result.append(f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n")
+        return str(result)
