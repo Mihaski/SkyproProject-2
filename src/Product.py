@@ -6,3 +6,9 @@ class Product:
         self.description = description
         self.price = price
         self.quantity = quantity
+
+    @classmethod
+    def new_product(cls, dict_params: dict, list_products: list[Product]) -> Product:
+        """Создает новый товар или увеличивает количество."""
+        new_product = cls(**dict_params)
+        return new_product
