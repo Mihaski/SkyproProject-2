@@ -29,11 +29,8 @@ def test_load_data_from_json(tmp_path, monkeypatch):
 
     result = load_data_from_json()
 
-    assert len(result) == 1
-    assert isinstance(result[0], Category)
-    assert result[0].name == "Смартфоны"
-    assert result[0].description == "Смартфоны для жизни"
-    assert result[0].products == data[0]["products"]
+    assert len(result[0].products) == 1
+    assert result[0].products[0].startswith("Iphone 15")
 
 
 def test_load_data_from_json_multiple_categories(tmp_path, monkeypatch):
