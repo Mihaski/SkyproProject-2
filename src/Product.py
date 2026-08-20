@@ -13,8 +13,10 @@ class Product:
 
     @price.setter
     def price(self, value):
-        if value <= 0:
-            print("Цена не должна быть нулевая или отрицательная")
+        if self.__price < value:
+            choose = input("Цена ниже той что была: записать новую?")
+            if "y" in choose.lower():
+                self.__price = value
         else:
             self.__price = value
 
