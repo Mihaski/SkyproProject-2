@@ -11,11 +11,7 @@ def reset_category_counters():
 
 @pytest.fixture
 def category_fruit(product_apple):
-    return Category(
-        "friut",
-        "many type of fruits",
-        [product_apple, product_apple, product_apple]
-    )
+    return Category("friut", "many type of fruits", [product_apple, product_apple, product_apple])
 
 
 def test_catefory_from_fixt(category_fruit):
@@ -33,11 +29,7 @@ def test_add_product(product_apple, category_fruit):
 
 
 def test_catefory_count(product_apple):
-    test_stat_2 = Category(
-        "vegetable",
-        "many type of vegetables",
-        [product_apple, product_apple, product_apple]
-    )
+    test_stat_2 = Category("vegetable", "many type of vegetables", [product_apple, product_apple, product_apple])
 
     assert test_stat_2.category_count == 1
 

@@ -1,6 +1,6 @@
 import json
 
-from Product import Product
+from src.Product import Product
 from src.Category import Category
 
 
@@ -18,11 +18,7 @@ def load_data_from_json(file_path: str = "data/products.json") -> list[Category]
                 product = Product.new_product(product_data)
                 products.append(product)
 
-            category = Category(
-                category_data["name"],
-                category_data["description"],
-                products
-            )
+            category = Category(category_data["name"], category_data["description"], products)
 
             categories.append(category)
 

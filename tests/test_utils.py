@@ -1,6 +1,5 @@
 import json
 
-from src.Category import Category
 from src.utils import load_data_from_json
 
 
