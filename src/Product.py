@@ -15,9 +15,6 @@ class Product:
     def price(self, value):
         if self.__price < value:
             print("Цена не должна быть нулевая или отрицательная")
-            choose = input("Цена ниже той что была: записать новую?")
-            if "y" in choose.lower():
-                self.__price = value
         else:
             self.__price = value
 
