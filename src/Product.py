@@ -13,7 +13,7 @@ class Product:
 
     @price.setter
     def price(self, value):
-        if self.__price < value:
+        if 0 < value:
             print("Цена не должна быть нулевая или отрицательная")
         else:
             self.__price = value
