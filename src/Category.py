@@ -26,9 +26,5 @@ class Category:
         Category.product_count += 1
 
     @property
-    def products(self) -> str:
-        """геттер для списка продуктов"""
-        return "\n".join(
-            product.__str__()
-            for product in self.__products
-        )
+    def products(self) -> list[Product]:
+        return self.__products
