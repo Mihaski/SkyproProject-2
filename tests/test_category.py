@@ -42,21 +42,14 @@ def test_product_count_category(product_apple, category_fruit):
 
     assert test_state.product_count == 4
 
+
 def test_category_str(product_apple):
-    category = Category(
-        "fruit",
-        "many type of fruits",
-        [product_apple, product_apple, product_apple]
-    )
+    category = Category("fruit", "many type of fruits", [product_apple, product_apple, product_apple])
 
     assert str(category) == "fruit, количество продуктов: 15 шт."
 
 
 def test_category_products(product_apple):
-    category = Category(
-        "fruit",
-        "many type of fruits",
-        [product_apple, product_apple, product_apple]
-    )
+    category = Category("fruit", "many type of fruits", [product_apple, product_apple, product_apple])
 
     assert category.products == [product_apple, product_apple, product_apple]

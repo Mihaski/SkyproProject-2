@@ -13,11 +13,7 @@ def category():
         Product("Мышь", "Компьютерная мышь", 3000, 20),
     ]
 
-    return Category(
-        "Электроника",
-        "Электронные товары",
-        products
-    )
+    return Category("Электроника", "Электронные товары", products)
 
 
 def test_iterator_returns_category_iterator(category):

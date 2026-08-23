@@ -1,4 +1,4 @@
-from Category import Category
+from src.Category import Category
 
 
 class NextCategory:

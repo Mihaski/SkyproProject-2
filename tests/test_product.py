@@ -13,11 +13,6 @@ def test_product_str(product_apple):
 
 
 def test_product_add(product_apple):
-    product_2 = Product(
-        "Ноутбук",
-        "Ноутбук",
-        100000,
-        5
-    )
+    product_2 = Product("Ноутбук", "Ноутбук", 100000, 5)
 
     assert product_apple + product_2 == 501000
