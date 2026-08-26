@@ -1,7 +1,7 @@
 import pytest
 
-from src.Smartphone import Smartphone
 from src.Category import Category
+from src.Smartphone import Smartphone
 
 
 @pytest.fixture(autouse=True)
@@ -65,16 +65,7 @@ def test_add_not_product(category_fruit):
 
 
 def test_add_smartphone(category_fruit):
-    smartphone = Smartphone(
-        "iPhone",
-        "Смартфон",
-        100000,
-        2,
-        "Высокая",
-        "15 Pro",
-        "256 GB",
-        "Black"
-    )
+    smartphone = Smartphone("iPhone", "Смартфон", 100000, 2, "Высокая", "15 Pro", "256 GB", "Black")
 
     old_count = len(category_fruit.products)
 
