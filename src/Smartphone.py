@@ -1,4 +1,4 @@
-from Product import Product
+from src.Product import Product
 
 
 class Smartphone(Product):
