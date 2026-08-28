@@ -1,7 +1,8 @@
 from BaseProduct import BaseProduct
+from PrintInfoMixin import PrintInfoMixin
 
 
-class Product(BaseProduct):
+class Product(PrintInfoMixin, BaseProduct):
     """Моделька продукта"""
 
     def __init__(self, name: str, description: str, price: float, quantity: float):
@@ -14,6 +15,13 @@ class Product(BaseProduct):
         if type(other) is not type(self):
             raise TypeError("Можно складывать товары только одного класса\\подкласса")
         return self.price * self.quantity + other.price * other.quantity
+
+    def __repr__(self):
+        return (
+            f"{self.__class__.__name__}"
+            f"({self.name!r}, {self.description!r}, "
+            f"{self.price!r}, {self.quantity!r})"
+        )
 
     @property
     def price(self) -> float:
