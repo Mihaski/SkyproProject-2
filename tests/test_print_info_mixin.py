@@ -7,18 +7,11 @@ def test_print_info_mixin(capsys):
 
     captured = capsys.readouterr()
 
-    assert captured.out == (
-        "Product('Продукт1', 'Описание продукта', 1200, 10)\n"
-    )
+    assert captured.out == ("Product('Продукт1', 'Описание продукта', 1200, 10)\n")
 
 
 def test_print_info_mixin_creates_product():
-    product = Product(
-        "Продукт1",
-        "Описание продукта",
-        1200,
-        10
-    )
+    product = Product("Продукт1", "Описание продукта", 1200, 10)
 
     assert product.name == "Продукт1"
     assert product.description == "Описание продукта"
@@ -27,19 +20,8 @@ def test_print_info_mixin_creates_product():
 
 
 def test_print_info_mixin_smartphone(capsys):
-    Smartphone(
-        "iPhone 15",
-        "Смартфон Apple",
-        100000,
-        2,
-        95.5,
-        "15 Pro",
-        256,
-        "Black"
-    )
+    Smartphone("iPhone 15", "Смартфон Apple", 100000, 2, 95.5, "15 Pro", 256, "Black")
 
     captured = capsys.readouterr()
 
-    assert captured.out == (
-        "Smartphone('iPhone 15', 'Смартфон Apple', 100000, 2)\n"
-    )
+    assert captured.out == ("Smartphone('iPhone 15', 'Смартфон Apple', 100000, 2)\n")

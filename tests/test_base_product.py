@@ -7,21 +7,11 @@ from src.Product import Product
 def test_base_product_is_abstract():
     with pytest.raises(TypeError):
         # noinspection abstract-class
-        BaseProduct(
-            "Продукт",
-            "Описание",
-            1000,
-            10
-        )
+        BaseProduct("Продукт", "Описание", 1000, 10)
 
 
 def test_base_product_attributes():
-    product = Product(
-        "Продукт",
-        "Описание продукта",
-        1000,
-        10
-    )
+    product = Product("Продукт", "Описание продукта", 1000, 10)
 
     assert product.name == "Продукт"
     assert product.description == "Описание продукта"
@@ -30,23 +20,13 @@ def test_base_product_attributes():
 
 
 def test_base_product_price_getter():
-    product = Product(
-        "Продукт",
-        "Описание",
-        1000,
-        10
-    )
+    product = Product("Продукт", "Описание", 1000, 10)
 
     assert product.price == 1000
 
 
 def test_base_product_price_setter(capsys):
-    product = Product(
-        "Продукт",
-        "Описание",
-        1000,
-        10
-    )
+    product = Product("Продукт", "Описание", 1000, 10)
 
     product.price = 1500
 
@@ -54,12 +34,7 @@ def test_base_product_price_setter(capsys):
 
 
 def test_base_product_price_setter_invalid(capsys):
-    product = Product(
-        "Продукт",
-        "Описание",
-        1000,
-        10
-    )
+    product = Product("Продукт", "Описание", 1000, 10)
 
     product.price = -500
 
