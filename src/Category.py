@@ -22,8 +22,9 @@ class Category:
 
     def add_product(self, product: Product):
         """Добавляет товар в категорию."""
-        self.__products.append(product)
-        Category.product_count += 1
+        if isinstance(product, Product):
+            self.__products.append(product)
+            Category.product_count += 1
 
     @property
     def products(self) -> list[Product]:
