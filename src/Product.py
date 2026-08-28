@@ -1,5 +1,5 @@
-from BaseProduct import BaseProduct
-from PrintInfoMixin import PrintInfoMixin
+from src.BaseProduct import BaseProduct
+from src.PrintInfoMixin import PrintInfoMixin
 
 
 class Product(PrintInfoMixin, BaseProduct):
@@ -22,17 +22,6 @@ class Product(PrintInfoMixin, BaseProduct):
             f"({self.name!r}, {self.description!r}, "
             f"{self.price!r}, {self.quantity!r})"
         )
-
-    @property
-    def price(self) -> float:
-        return self.__price
-
-    @price.setter
-    def price(self, value):
-        if 0 < value:
-            print("Цена не должна быть нулевая или отрицательная")
-        else:
-            self.__price = value
 
     @classmethod
     def new_product(cls, dict_params: dict, products=None) -> Product:

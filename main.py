@@ -1,3 +1,4 @@
+from src.Product import Product
 from src.Category import Category
 
 if __name__ == '__main__':

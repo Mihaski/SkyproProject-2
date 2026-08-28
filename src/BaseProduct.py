@@ -17,3 +17,14 @@ class BaseProduct(ABC):
     @abstractmethod
     def __add__(self, other):
         pass
+
+    @property
+    def price(self) -> float:
+        return self.__price
+
+    @price.setter
+    def price(self, value):
+        if value < 0:
+            print("Цена не должна быть нулевая или отрицательная")
+        else:
+            self.__price = value

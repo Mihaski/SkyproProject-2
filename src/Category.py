@@ -1,7 +1,8 @@
+from src.BaseOrderCategory import BaseOrderCategory
 from src.Product import Product
 
 
-class Category:
+class Category(BaseOrderCategory):
     """Моделька категорий"""
 
     # Атрибуты
