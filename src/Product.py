@@ -1,11 +1,12 @@
-class Product:
+from src.BaseProduct import BaseProduct
+from src.PrintInfoMixin import PrintInfoMixin
+
+
+class Product(PrintInfoMixin, BaseProduct):
     """Моделька продукта"""
 
     def __init__(self, name: str, description: str, price: float, quantity: float):
-        self.name = name
-        self.description = description
-        self.__price = price
-        self.quantity = quantity
+        super().__init__(name, description, price, quantity)
 
     def __str__(self):
         return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
@@ -15,16 +16,12 @@ class Product:
             raise TypeError("Можно складывать товары только одного класса\\подкласса")
         return self.price * self.quantity + other.price * other.quantity
 
-    @property
-    def price(self) -> float:
-        return self.__price
-
-    @price.setter
-    def price(self, value):
-        if 0 < value:
-            print("Цена не должна быть нулевая или отрицательная")
-        else:
-            self.__price = value
+    def __repr__(self):
+        return (
+            f"{self.__class__.__name__}"
+            f"({self.name!r}, {self.description!r}, "
+            f"{self.price!r}, {self.quantity!r})"
+        )
 
     @classmethod
     def new_product(cls, dict_params: dict, products=None) -> Product:
