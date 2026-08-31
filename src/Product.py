@@ -6,6 +6,8 @@ class Product(PrintInfoMixin, BaseProduct):
     """Моделька продукта"""
 
     def __init__(self, name: str, description: str, price: float, quantity: float):
+        if quantity <= 0:
+            raise ValueError('Товар с нулевым количеством не может быть добавлен')
         super().__init__(name, description, price, quantity)
 
     def __str__(self):
