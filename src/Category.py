@@ -1,4 +1,5 @@
 from src.BaseOrderCategory import BaseOrderCategory
+from src.OrderAddException import OrderAddException
 from src.Product import Product
 
 
@@ -23,15 +24,28 @@ class Category(BaseOrderCategory):
 
     def add_product(self, product: Product):
         """Добавляет товар в категорию."""
-        if isinstance(product, Product):
-            self.__products.append(product)
-            Category.product_count += 1
+        try:
+            if product.quantity == 0:
+                raise OrderAddException("Нельзя добавить товар с нулевым количеством.")
+
+            if isinstance(product, Product):
+                self.__products.append(product)
+                Category.product_count += 1
+
+        except OrderAddException as e:
+            print(e)
+
+        else:
+            print("Товар успешно добавлен.")
+
+        finally:
+            print("Обработка добавления товара завершена.")
 
     @property
     def products(self) -> list[Product]:
         return self.__products
 
-    def calculate_average_cost(self):
+    def middle_price(self):
         try:
             average_cost = 0
             count = 0

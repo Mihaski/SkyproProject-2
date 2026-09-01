@@ -39,6 +39,12 @@ def test_smartphone_add():
 
     assert smartphone_1 + smartphone_2 == 440000
 
+
 def test_zero_quantity_init_product():
     with pytest.raises(ValueError):
-        Product('ap','fruit', 0, 0,)
+        Product(
+            "ap",
+            "fruit",
+            0,
+            0,
+        )
