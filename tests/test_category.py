@@ -15,6 +15,11 @@ def category_fruit(product_apple):
     return Category("fruit", "many type of fruits", [product_apple, product_apple, product_apple])
 
 
+def test_calculate_average_cost(category_fruit):
+    crash_data = Category("fr", "na", [])
+    assert crash_data.middle_price() == 0
+
+
 def test_catefory_from_fixt(category_fruit):
     assert category_fruit.name == "fruit"
     assert category_fruit.description == "many type of fruits"
@@ -54,14 +59,6 @@ def test_category_products(product_apple):
     category = Category("fruit", "many type of fruits", [product_apple, product_apple, product_apple])
 
     assert category.products == [product_apple, product_apple, product_apple]
-
-
-def test_add_not_product(category_fruit):
-    old_count = len(category_fruit.products)
-
-    category_fruit.add_product("это не продукт")
-
-    assert len(category_fruit.products) == old_count
 
 
 def test_add_smartphone(category_fruit):

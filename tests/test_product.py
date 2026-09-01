@@ -38,3 +38,13 @@ def test_smartphone_add():
     smartphone_2 = Smartphone("Samsung", "Смартфон", 80000, 3, 95.5, "S24", 256, "Black")
 
     assert smartphone_1 + smartphone_2 == 440000
+
+
+def test_zero_quantity_init_product():
+    with pytest.raises(ValueError):
+        Product(
+            "ap",
+            "fruit",
+            0,
+            0,
+        )
