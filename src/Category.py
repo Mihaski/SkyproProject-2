@@ -34,10 +34,10 @@ class Category(BaseOrderCategory):
     def calculate_average_cost(self):
         try:
             average_cost = 0
-            quantity = 0
+            count = 0
             for product in self.__products:
-                quantity += 1
+                count += 1
                 average_cost += product.price
-            return average_cost / quantity
-        except ZeroDivisionError as e:
+            return average_cost / count
+        except ZeroDivisionError:
             return 0

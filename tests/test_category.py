@@ -15,6 +15,11 @@ def category_fruit(product_apple):
     return Category("fruit", "many type of fruits", [product_apple, product_apple, product_apple])
 
 
+def test_calculate_average_cost(category_fruit):
+    crash_data = Category('fr', 'na', [])
+    assert crash_data.calculate_average_cost() == 0
+
+
 def test_catefory_from_fixt(category_fruit):
     assert category_fruit.name == "fruit"
     assert category_fruit.description == "many type of fruits"
